@@ -70,21 +70,17 @@ O modelo foi avaliado no conjunto de validação (3.548 imagens isoladas), obten
 | **Classe 3** | In-between Round Smooth     |   0.92   |        0.96        |   0.94   |
 | **Classe 0** | Disturbed Galaxies          |  _0.71_  |       _0.64_       |  _0.67_  |
 
-<div align="center">
-    <figure>
-    <img src="assets/ConfusionMatrix.png" alt="Matriz de Confusão do Modelo DenseNet-121">
-    <figcaption>Matriz de Confusão do Modelo DenseNet-121.</figcaption>
-    </figure>
-</div>
+<figure align="center">
+  <img src="assets/ConfusionMatrix.png" alt="Matriz de Confusão do Modelo DenseNet-121">
+  <figcaption>Figure 1: Matriz de Confusão do Modelo DenseNet-121.</figcaption>
+</figure>
 
 - **Análise Crítica:** O modelo obteve excelente desempenho na identificação de galáxias com geometria bem definida, como as elípticas lisas e espirais vistas de perfil (F1-score $\ge 0.95$). A principal limitação se encontra na **Classe 0 (Disturbed Galaxies)** com F1-score de 0.69; erros analisados na Matriz de Confusão mostram que essas galáxias sofrem confusão com galáxias espirais soltas (Classe 7) e sem barra (Classe 6), devido à sua natureza visualmente irregular e difusa no espaço celestial.
 
-<div align="center">
-    <figure>
-    <img src="assets/galaxies_comparison.png" alt="Comparação entre galáxias">
-    <figcaption>Comparação entre galáxias das classes 0 e 7.</figcaption>
-    </figure>
-</div>
+<figure align="center">
+  <img src="assets/galaxies_comparison.png" alt="Comparação entre galáxias">
+  <figcaption>Figure 2: Comparação entre galáxias das classes 0 e 7.</figcaption>
+</figure>
 
 ## 8. Divisão das Contribuições
 
