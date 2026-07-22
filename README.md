@@ -76,7 +76,7 @@ O modelo foi avaliado no conjunto de validação (3.548 imagens isoladas), obten
 
 - **Gabriel Argôlo:** xxxxxxxxxxxxxxxxx
 - **João Pedro:** Desenvolvimento e implementação do pipeline de treinamento e inferência do DenseNet-121 no dataset Galaxy10 DECaLS
-- **Davi Oliveira:** xxxxxxxxxxxxxxxxxx
+- **Davi Oliveira:** Redação da documentação no Colab, interpretação da Matriz de Confusão e diagnósticos de erro e edição do vídeo. 
 
 ## 9. Link do Vídeo Explicativo
 
@@ -91,4 +91,4 @@ O vídeo contendo a apresentação detalhada do trabalho, com a identificação 
 Declaram-se os seguintes usos de ferramentas de IA durante o desenvolvimento deste projeto, visando total transparência de acordo com as normas da disciplina:
 
 - **Ferramenta Utilizada:** Gemini (Google).
-- **Finalidade:** Auxílio na sintaxe de transformações da biblioteca `Albumentations`, auxílio no desenvolvimento da pipeline de treino e validação utilizando a biblioteca PyTorch, documentação de docstrings no código Python e revisão gramatical/formatação Markdown deste arquivo README.
+- **Finalidade:** Auxílio na sintaxe de transformações da biblioteca `Albumentations`, auxílio no desenvolvimento da pipeline de treino e validação utilizando a biblioteca PyTorch, documentação de docstrings no código Python e revisão gramatical/formatação da documentação do colab e Markdown deste arquivo README.
