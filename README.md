@@ -64,11 +64,15 @@ O modelo foi avaliado no conjunto de validação (3.548 imagens isoladas), obten
 
 |    Classe    | Nome da Morfologia          | Precisão | Revocação (Recall) | F1-Score |
 | :----------: | :-------------------------- | :------: | :----------------: | :------: |
-| **Classe 9** | Edge-on Galaxies with Bulge | **0.97** |      **0.96**      | **0.97** |
-| **Classe 1** | Merging Galaxies            |   0.94   |        0.95        |   0.95   |
-| **Classe 2** | Round Smooth Galaxies       |   0.94   |        0.96        |   0.95   |
-| **Classe 3** | In-between Round Smooth     |   0.93   |        0.97        |   0.95   |
-| **Classe 0** | Disturbed Galaxies          |  _0.76_  |       _0.64_       |  _0.69_  |
+| **Classe 9** | Edge-on Galaxies with Bulge | **0.98** |      **0.96**      | **0.97** |
+| **Classe 1** | Merging Galaxies            |   0.91   |        0.94        |   0.93   |
+| **Classe 2** | Round Smooth Galaxies       |   0.93   |        0.96        |   0.95   |
+| **Classe 3** | In-between Round Smooth     |   0.92   |        0.96        |   0.94   |
+| **Classe 0** | Disturbed Galaxies          |  _0.71_  |       _0.64_       |  _0.67_  |
+
+<p align="center">
+  <img src="assets/ConfusionMatrix.png" alt="Matriz de Confusão do Modelo DenseNet-121" width="600"/>
+</p>
 
 - **Análise Crítica:** O modelo obteve excelente desempenho na identificação de galáxias com geometria bem definida, como as elípticas lisas e espirais vistas de perfil (F1-score $\ge 0.95$). A principal limitação se encontra na **Classe 0 (Disturbed Galaxies)** com F1-score de 0.69; erros analisados na Matriz de Confusão mostram que essas galáxias sofrem confusão com galáxias espirais soltas (Classe 7) e sem barra (Classe 6), devido à sua natureza visualmente irregular e difusa no espaço celestial.
 
