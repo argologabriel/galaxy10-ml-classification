@@ -37,8 +37,8 @@ O notebook foi desenvolvido para rodar perfeitamente no ambiente do Google Colab
 2. **Configuração de Hardware:** No menu superior do Colab, vá em `Ambiente de execução` -> `Alterar o tipo de ambiente de execução` e selecione **GPU (ex.: T4)**. O uso de GPU é obrigatório para aceleração do treinamento e inferência.
 3. **Download dos Dados:** Execute as células iniciais. O código possui um script automatizado (`download_dataset()`) que verifica se o dataset existe e, caso contrário, baixa o arquivo `Galaxy10_DECals.h5` automaticamente da fonte pública.
 4. **Treinamento vs. Inferência:**
-    - Para treinar do zero, execute a célula do "Loop de treinamento" (tempo estimado: ~2 horas).
-    - Para avaliar imediatamente, pule a célula de treino e execute a célula **"Download de modelo pré-treinado"**, que baixará os pesos otimizados diretamente do Hugging Face Hub (`JPedro108/Galaxy10_DenseNet121`).
+   - Para treinar do zero, execute a célula do "Loop de treinamento" (tempo estimado: ~2 horas).
+   - Para avaliar imediatamente, pule a célula de treino e execute a célula **"Download de modelo pré-treinado"**, que baixará os pesos otimizados diretamente do Hugging Face Hub (`JPedro108/Galaxy10_DenseNet121`).
 5. Execute as células de **Inferência e Avaliação** para gerar a Matriz de Confusão e o Relatório de Classificação.
 
 ## 6. Modelos Utilizados e Metodologia
@@ -48,8 +48,8 @@ Por se tratar de um problema complexo de visão computacional (imagens), utiliza
 - **Modelo Principal:** **DenseNet-121** (`torchvision.models.densenet121`). Esta arquitetura foi escolhida por sua conectividade densa, onde cada camada recebe entradas de todas as camadas anteriores, mitigando o problema de desvanecimento do gradiente e extraindo padrões morfológicos altamente complexos.
 - **Ajuste Fino (Fine-Tuning):** A camada classificadora original foi substituída por uma sequência customizada: `Linear(1024, 256) -> ReLU -> Dropout(0.3) -> Linear(256, 10)` para evitar _overfitting_.
 - **Pré-processamento e Balanceamento (Data Augmentation):**
-    - O dataset apresentava desbalanceamento severo. Utilizamos a biblioteca `Albumentations` exclusivamente no conjunto de **Treino (80%)** para gerar amostras sintéticas das classes minoritárias através de rotações aleatórias (`RandomRotate90`), espelhamentos (`Horizontal/Vertical Flip`) e translações (`ShiftScaleRotate`), equilibrando o número de amostras por classe.
-    - O conjunto de **Validação/Teste (20%)** foi mantido estritamente isolado e original para evitar vazamento de dados (_data leakage_).
+  - O dataset apresentava desbalanceamento severo. Utilizamos a biblioteca `Albumentations` exclusivamente no conjunto de **Treino (80%)** para gerar amostras sintéticas das classes minoritárias através de rotações aleatórias (`RandomRotate90`), espelhamentos (`Horizontal/Vertical Flip`) e translações (`ShiftScaleRotate`), equilibrando o número de amostras por classe.
+  - O conjunto de **Validação/Teste (20%)** foi mantido estritamente isolado e original para evitar vazamento de dados (_data leakage_).
 - **Otimização:** Treinamento realizado com otimizador **AdamW** ($lr = 1\times 10^{-4}$), agendador `ReduceLROnPlateau`, precisão mista (AMP/GradScaler) e função de perda `CrossEntropyLoss` com **Label Smoothing (0.1)** para penalizar excesso de confiança em classes visualmente ambíguas.
 
 ## 7. Principais Resultados
@@ -70,17 +70,23 @@ O modelo foi avaliado no conjunto de validação (3.548 imagens isoladas), obten
 | **Classe 3** | In-between Round Smooth     |   0.92   |        0.96        |   0.94   |
 | **Classe 0** | Disturbed Galaxies          |  _0.71_  |       _0.64_       |  _0.67_  |
 
-<p align="center">
-  <img src="assets/ConfusionMatrix.png" alt="Matriz de Confusão do Modelo DenseNet-121" width="600"/>
-</p>
+<figure>
+  <img src="assets/ConfusionMatrix.png" alt="Matriz de Confusão do Modelo DenseNet-121">
+  <figcaption>Matriz de Confusão do Modelo DenseNet-121.</figcaption>
+</figure>
 
 - **Análise Crítica:** O modelo obteve excelente desempenho na identificação de galáxias com geometria bem definida, como as elípticas lisas e espirais vistas de perfil (F1-score $\ge 0.95$). A principal limitação se encontra na **Classe 0 (Disturbed Galaxies)** com F1-score de 0.69; erros analisados na Matriz de Confusão mostram que essas galáxias sofrem confusão com galáxias espirais soltas (Classe 7) e sem barra (Classe 6), devido à sua natureza visualmente irregular e difusa no espaço celestial.
+
+<figure>
+  <img src="assets/galaxies_comparison.png" alt="Comparação entre galáxias">
+  <figcaption>Comparação entre galáxias das classes 0 e 7.</figcaption>
+</figure>
 
 ## 8. Divisão das Contribuições
 
 - **Gabriel Argôlo:** xxxxxxxxxxxxxxxxx
 - **João Pedro:** Desenvolvimento e implementação do pipeline de treinamento e inferência do DenseNet-121 no dataset Galaxy10 DECaLS
-- **Davi Oliveira:** Redação da documentação no Colab, interpretação da Matriz de Confusão e diagnósticos de erro e edição do vídeo. 
+- **Davi Oliveira:** Redação da documentação no Colab, interpretação da Matriz de Confusão e diagnósticos de erro e edição do vídeo.
 
 ## 9. Link do Vídeo Explicativo
 

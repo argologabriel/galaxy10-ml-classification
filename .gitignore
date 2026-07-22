@@ -1,0 +1,4 @@
+.venv/
+.cache/
+Galaxy10_DECals.h5
+GalaxyModel_DenseNet_Label_Smoothing.pth
