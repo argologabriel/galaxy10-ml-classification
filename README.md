@@ -33,7 +33,12 @@ O repositório está estruturado da seguinte forma para garantir reprodutibilida
 
 O notebook foi desenvolvido para rodar perfeitamente no ambiente do Google Colab sem dependências locais:
 
-1. Clique no link para abrir o notebook no Colab: [Abrir no Google Colab](https://colab.research.google.com/drive/1MU-zhhTwxQQiqFdkSsjPL_4SJNnMTZqW?usp=sharing).
+1. Clique no botão para abrir o notebook no Colab:
+
+   <a target="_blank" href="https://colab.research.google.com/github/argologabriel/galaxy10-ml-classification/blob/main/Galaxy10_DenseNet.ipynb">
+     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+   </a>
+
 2. **Configuração de Hardware:** No menu superior do Colab, vá em `Ambiente de execução` -> `Alterar o tipo de ambiente de execução` e selecione **GPU (ex.: T4)**. O uso de GPU é obrigatório para aceleração do treinamento e inferência.
 3. **Download dos Dados:** Execute as células iniciais. O código possui um script automatizado (`download_dataset()`) que verifica se o dataset existe e, caso contrário, baixa o arquivo `Galaxy10_DECals.h5` automaticamente da fonte pública.
 4. **Treinamento vs. Inferência:**
