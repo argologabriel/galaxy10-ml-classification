@@ -84,7 +84,7 @@ O modelo foi avaliado no conjunto de validação (3.548 imagens isoladas), obten
 
 ## 8. Divisão das Contribuições
 
-- **Gabriel Argôlo:** xxxxxxxxxxxxxxxxx
+- **Gabriel Argôlo:** Estruturação do repositório no GitHub, elaboração da documentação no README e auxílio no pré-processamento dos dados.
 - **João Pedro:** Desenvolvimento e implementação do pipeline de treinamento e inferência do DenseNet-121 no dataset Galaxy10 DECaLS
 - **Davi Oliveira:** Redação da documentação no Colab, interpretação da Matriz de Confusão e diagnósticos de erro e edição do vídeo.
 
