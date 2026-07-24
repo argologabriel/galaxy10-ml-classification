@@ -97,7 +97,7 @@ O modelo foi avaliado no conjunto de validação (3.548 imagens isoladas), obten
 
 O vídeo contendo a apresentação detalhada do trabalho, com a identificação e participação na explicação do código e dos conceitos de **todos** os integrantes do grupo, está disponível abaixo:
 
-🎥 **[CLIQUE AQUI PARA ASSISTIR AO VÍDEO EXPLICATIVO NO YOUTUBE/DRIVE](https://youtu.be/V_yBm4fvD1Y?si=nsvapqRLyoxh1Xq_)**
+🎥 **[CLIQUE AQUI PARA ASSISTIR AO VÍDEO EXPLICATIVO NO YOUTUBE](https://youtu.be/V_yBm4fvD1Y?si=nsvapqRLyoxh1Xq_)**
 
 ---
 
